@@ -4,9 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accordéon avec des booléens</title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <title>Accordéon avec des booléen</title>
   </head>
   <body>
-    <h1>Accordéon avec des booléens</h1>
+    <div class="accordeon">
+      <section>
+        <dl x-data="{lorem: false}">
+          <dt @click=" lorem = ! lorem">
+          <button>Cliquez ici</button></dt>
+          <dd x-show="lorem"
+          x-transition.duration.500ms
+          x-transition:leave-start="opacity-100 scale-100"
+           class="accordéon"
+          >pour afficher la suite du texte</dd>
+        </dl>
+      </section>
+      <section>
+        <dl x-data="{lorem: false}">
+          <dt @click=" lorem = ! lorem"><button>APPUYER ICI</button></dt>
+          <dd x-show="lorem"
+          x-transition.duration.500ms
+          x-transition:leave-start="opacity-100 scale-100"
+           class="accordéon"
+          >pour afficher la suite</dd>
+        </dl>
+      </section>
+      <section>
+        <dl x-data="{lorem: false}">
+          <dt @click=" lorem = ! lorem"><button>Ce bouton</button></dt>
+          <dd x-show="lorem"
+          x-transition.duration.500ms
+          x-transition:leave-start="opacity-100 scale-100"
+           class="accordéon"
+          > sert à afficher ce texte</dd>
+        </dl>
+      </section>
+    </div>
   </body>
 </html>
